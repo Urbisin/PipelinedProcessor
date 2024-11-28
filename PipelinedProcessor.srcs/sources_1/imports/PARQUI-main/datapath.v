@@ -44,6 +44,7 @@ module datapath (
     wire [31:0] RD1D, RD2D, ExtImmD;
     
 	// EX (Execute) stage signals
+	wire [3:0] RA1E, RA2E;
     wire [31:0] RD1E, RD2E, ExtImmE;
     wire [3:0] WA3E;
     wire [31:0] SrcAE, SrcBE, ALUResultE, WriteDataE;
@@ -108,7 +109,10 @@ module datapath (
 		.wd3(ResultW),
 		.r15(PCPlus4D),
 		.rd1(RD1D),
-		.rd2(RD2D)
+		.rd2(RD2D),
+		.ra1E(RA1E),
+		.ra2E(RA2E)
+
 	);
 	
 	extend ext(

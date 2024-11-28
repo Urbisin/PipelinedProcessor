@@ -1,14 +1,22 @@
-module hazard_detection_unit (
-    input [3:0] ID_Rs,
-    input [3:0] ID_Rt,
-    input [3:0] EX_Rd,
-    input EX_MemRead,
-    output reg Stall
+module hazard_unit(
+    input wire RegWriteM, RegWriteM
+    input wire [3:0] RA1E, RA2E, WA3M
+    output wire Match_1E_M, Match_2E_M, Match_1E_W, Match_2E_W,
+    output wire ForwardAE
 );
-    always @(*) begin
-        if (EX_MemRead && ((EX_Rd == ID_Rs) || (EX_Rd == ID_Rt)))
-            Stall = 1'b1;
-        else
-            Stall = 1'b0;
+    assign Match_1E_M = (RA1E == WA3M);
+    assign Match_2E_M = (RA2E == WA3M);
+
+    assign Match_1E_W = (RA1E == WA3M);
+    assign Match_2E_W = (RA2E == WA3M);
+    
+    if (Match_1E_M & RegWriteM) begin
+        assign ForwardAE = 10;
+    end
+    else if (Match_1E_W & RegWriteW) begin
+        assign ForwardAE = 01;
+    end
+    else begin
+        assign ForwardAE = 00;
     end
 endmodule
