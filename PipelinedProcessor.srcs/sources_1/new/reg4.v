@@ -1,4 +1,4 @@
-module register4(
+module reg4(
     clk,
     reset,
     PCSrcM,

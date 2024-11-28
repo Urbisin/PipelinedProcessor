@@ -1,4 +1,4 @@
-module register1 (
+module reg1 (
     clk,
     reset,
     InstrF,

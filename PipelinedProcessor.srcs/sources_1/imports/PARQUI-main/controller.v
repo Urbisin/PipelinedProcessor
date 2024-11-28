@@ -69,7 +69,7 @@ module controller (
 		.RegSrcD(RegSrcD)	
 	);
 	
-	register2 registerc1(
+	reg2 registerc1(
 	    .clk(clk),
 	    .reset(reset),
 	    .PCSrcD(PCSrcD),
@@ -110,7 +110,7 @@ module controller (
 	assign RegWriteEA = RegWriteE & CondExE;
 	assign MemWriteEA = MemWriteE % CondExE;
 	
-	register3 registerc2(
+	reg3 registerc2(
 	    .clk(clk),
 		.reset(reset),
 		.PCSrcEA(PCSrcEA),
@@ -123,7 +123,7 @@ module controller (
 		.MemWriteM(MemWriteM)
 	);
 	
-	register4 registerc4(
+	reg4 registerc4(
         .clk(clk),
 		.reset(reset),
 		.PCSrcM(PCSrcM),

@@ -117,7 +117,7 @@ module datapath (
         .ExtImm(ExtImmD)
     );
     
-    register5 registerd1(
+    reg5 registerd1(
         .clk(clk),
         .reset(reset),
         .

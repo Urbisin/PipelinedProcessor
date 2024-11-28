@@ -61,7 +61,7 @@ module arm (
 		.ReadData(ReadData)
 	);
 	
-	register1 registerarm1(
+	reg1 registerarm1(
 	    .clk(clk),
 	    .reset(reset),
         .InstrF(InstrF),

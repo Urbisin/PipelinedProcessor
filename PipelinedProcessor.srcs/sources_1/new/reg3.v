@@ -1,4 +1,4 @@
-module register3(
+module reg3(
     clk,
     reset,
     PCSrcEA,
