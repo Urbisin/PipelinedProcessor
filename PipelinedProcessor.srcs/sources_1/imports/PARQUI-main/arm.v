@@ -6,59 +6,58 @@ module arm (
 	MemWrite,
 	ALUResult,
 	WriteData,
-	ReadData
+	ReadDataM
 );
-	input wire clk;
-	input wire reset;
-	input wire [31:0] InstrF;
-	input wire [31:0] ReadData;
+	input wire clk; //
+	input wire reset; //
+	input wire [31:0] InstrF; //
+	input wire [31:0] ReadDataM; //
 	
-	output wire [31:0] PC;
-	output wire MemWrite;
-	output wire [31:0] ALUResult;
-	output wire [31:0] WriteData;
+	output wire [31:0] PCF; //
+	output wire MemWriteM; //
+	output wire [31:0] ALUResultM; //
+	output wire [31:0] WriteDataM; //
 	
-	wire [31:0] InstrD;
-	wire [3:0] ALUFlags;
-	wire RegWrite;
-	wire ALUSrc;
-	wire MemtoReg;
-	wire PCSrc;
-	wire [1:0] RegSrc;
-	wire [1:0] ImmSrc;
-	wire [1:0] ALUControl;
+	wire [31:0] InstrD; //
+	wire [3:0] ALUFlags; //
+	wire RegWriteW; //
+	wire ALUSrcE; //
+	wire MemtoRegW; //
+	wire PCSrcW; //
+	wire [1:0] RegSrcD; //
+	wire [1:0] ImmSrcD; //
+	wire [1:0] ALUControlE; //
 	
 	controller c(
 		.clk(clk),
 		.reset(reset),
 		.InstrD(InstrD[31:12]),
 		.ALUFlags(ALUFlags),
-		.RegSrc(RegSrc),
-		.RegWrite(RegWrite),
-		.ImmSrc(ImmSrc),
-		.ALUSrc(ALUSrc),
-		.ALUControl(ALUControl),
-		.MemWrite(MemWrite),
-		.MemtoReg(MemtoReg),
-		.PCSrc(PCSrc)
+		.ImmSrcD(ImmSrcD),
+		.RegSrcD(RegSrcD),
+		.MemWriteM(MemWriteM),
+		.PCSrcW(PCSrcW),
+		.RegWriteW(RegWriteW),
+		.MemtoRegW(MemtoRegW)
 	);
 	
 	datapath dp(
 		.clk(clk),
 		.reset(reset),
-		.RegSrc(RegSrc),
-		.RegWrite(RegWrite),
-		.ImmSrc(ImmSrc),
-		.ALUSrc(ALUSrc),
-		.ALUControl(ALUControl),
-		.MemtoReg(MemtoReg),
-		.PCSrc(PCSrc),
+		.InstrD(InstrD),
+		.RegSrcD(RegSrcD),
+		.ImmSrcD(ImmSrcD),
+		.ALUControlE(ALUControlE),
+		.ALUSrcE(ALUSrcE),
+		.MemWriteM(MemWriteM),
+		.PCSrcW(PCSrcW),
+		.RegWriteW(RegWriteW),
+		.MemtoRegW(MemtoRegW),
+		.ReadDataM(ReadDataM)
+		.PCF(PCF),
 		.ALUFlags(ALUFlags),
-		.PC(PC),
-		.Instr(Instr),
-		.ALUResult(ALUResult),
-		.WriteData(WriteData),
-		.ReadData(ReadData)
+		.ALUResultM(ALUResultM),
+		.WriteDataM(WriteDataM)
 	);
 	
 	reg1 registerarm1(
