@@ -6,9 +6,9 @@ module reg6(
     input wire [31:0] WriteDataE,
     input wire [3:0] WA3E,
 
-    output wire [31:0] ALUResultM,
-    output wire [31:0] WriteDataM,
-    output wire [3:0] WA3M
+    output reg [31:0] ALUResultM,
+    output reg [31:0] WriteDataM,
+    output reg [3:0] WA3M
 );
     always @ (posedge clk, posedge reset) begin
         if (reset) begin

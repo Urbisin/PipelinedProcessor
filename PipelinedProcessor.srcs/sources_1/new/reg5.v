@@ -6,9 +6,9 @@ module reg5(
     input wire [31:0] rd2D,
     input wire [31:0] ExtImmD,
 
-    output wire [31:0] rd1E,
-    output wire [31:0] rd2E,
-    output wire [31:0] ExtImmE
+    output reg [31:0] rd1E,
+    output reg [31:0] rd2E,
+    output reg [31:0] ExtImmE
 );
     always @ (posedge clk, posedge reset) begin
         if (reset) begin
@@ -19,7 +19,7 @@ module reg5(
         else begin
             rd1E <= rd1D;
             rd2E <= rd2D;
-            ExtImmD <= ExtImmE;
+            ExtImmE <= ExtImmD;
         end
     end
 endmodule

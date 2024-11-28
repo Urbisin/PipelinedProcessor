@@ -6,9 +6,9 @@ module reg7(
     input wire [31:0] ALUOutM,
     input wire [3:0] WA3M,
 
-    output wire [31:0] ReadDataW,
-    output wire [31:0] ALUOutW,
-    output wire [3:0] WA3W
+    output reg [31:0] ReadDataW,
+    output reg [31:0] ALUOutW,
+    output reg [3:0] WA3W
 );
     always @ (posedge clk, posedge reset) begin
         if (reset) begin

@@ -32,7 +32,7 @@ module datapath (
     
     output wire [31:0] PCF;
 	output wire [3:0] ALUFlags;
-	
+	output wire [31:0] ALUResultM;
 	output wire [31:0] WriteDataM;
 	
 // Declare internal signals for all pipeline stages
@@ -132,10 +132,10 @@ module datapath (
     );
 	
 	alu alu(
-        .SrcA(SrcAE),
-        .SrcB(SrcBE),
+        .a(SrcAE),
+        .b(SrcBE),
         .ALUControl(ALUControlE),
-        .ALUResult(ALUResultE),
+        .Result(ALUResultE),
         .ALUFlags(ALUFlags)
     );
     
@@ -161,7 +161,7 @@ module datapath (
 		.WA3W(WA3W)
 	);
 
-	mux2 resultmux(
+	mux2r resultmux(
 		.d0(ALUResultW),
 		.d1(ReadDataW),
 		.s(MemtoRegW),

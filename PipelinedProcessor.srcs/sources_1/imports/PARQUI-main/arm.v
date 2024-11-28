@@ -1,12 +1,12 @@
 module arm (
 	clk,
 	reset,
-	PC,
 	InstrF,
-	MemWrite,
-	ALUResult,
-	WriteData,
-	ReadDataM
+    ReadDataM,
+    PCF,
+	MemWriteM,
+	ALUResultM,
+	WriteDataM
 );
 	input wire clk; //
 	input wire reset; //
@@ -53,7 +53,7 @@ module arm (
 		.PCSrcW(PCSrcW),
 		.RegWriteW(RegWriteW),
 		.MemtoRegW(MemtoRegW),
-		.ReadDataM(ReadDataM)
+		.ReadDataM(ReadDataM),
 		.PCF(PCF),
 		.ALUFlags(ALUFlags),
 		.ALUResultM(ALUResultM),

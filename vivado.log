@@ -355,3 +355,5 @@ WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-f
 ERROR: [Common 17-180] Spawn failed: No error
 WARNING: [filemgmt 56-315] Source scanning failed during design analysis. To get more details run synthesis or simulation and check the log.
 WARNING: [filemgmt 56-315] Source scanning failed during design analysis. To get more details run synthesis or simulation and check the log.
+exit
+INFO: [Common 17-206] Exiting Vivado at Thu Nov 28 02:36:50 2024...
