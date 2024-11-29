@@ -3,15 +3,15 @@ module controller (
 	input wire [31:12] InstrD,
 	input wire [3:0] ALUFlags,
 
-	output wire [1:0] ImmSrcD, RegSrcD,
-	output wire MemWriteM, PCSrcW, RegWriteW, MemtoRegW
+	output wire [1:0] ImmSrcD, RegSrcD, ALUControlE,
+	output wire MemWriteM, PCSrcW, RegWriteW, MemtoRegW, ALUSrcE
 );
 	wire PCSrcD, RegWriteD, MemtoRegD, MemWriteD, BranchD, ALUSrcD;
 	wire [1:0] ALUControlD, FlagWriteD;
 	wire [3:0] Flags;
 	
-	wire PCSrcE, RegWriteE, MemtoRegE, MemWriteE, BranchE, ALUSrcE, CondExE;
-	wire [1:0] ALUControlE, FlagWriteE;
+	wire PCSrcE, RegWriteE, MemtoRegE, MemWriteE, BranchE, CondExE;
+	wire [1:0] FlagWriteE;
 	wire [3:0] CondE, FlagsE;
 	
 	wire PCSrcEA, RegWriteEA, MemWriteEA, BranchEA;

@@ -1,7 +1,9 @@
 module reg5(
     input wire clk, reset,
+    
     input wire [31:0] rd1D, rd2D, ExtImmD, 
     input wire [3:0] wa3D,
+    
     output reg [31:0] rd1E, rd2E, ExtImmE,
     output reg [3:0] wa3E
 );

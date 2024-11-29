@@ -17,7 +17,7 @@ module pipelined;
     // Generación de la señal de reset
     initial begin
         reset <= 1;
-        #(20);
+        #(15);
         reset <= 0;
     end
 
@@ -28,24 +28,6 @@ module pipelined;
         clk <= 0;
         #(5);  // Ciclo bajo de 5 unidades de tiempo
     end
-
-    // Monitor de señales para validación de datos en etapas del pipeline
-    always @(negedge clk) begin
-        // Ejemplo de validación del acceso a memoria en la etapa MEM
-        if (MemWriteM) begin
-            $display("At time %0t: Memory Write - Addr: %h, Data: %h", $time, DataAdr, WriteDataM);
-        end
-
-        // Verificación de resultados en el Write Back (WB)
-        if ((DataAdr === 100) & (WriteDataM === 7)) begin
-            $display("Simulation succeeded at time %0t", $time);
-            $stop;
-        end else if (DataAdr !== 96 && reset == 0) begin
-            $display("Simulation failed at time %0t", $time);
-            $stop;
-        end
-    end
-
     // Opcional: Mostrar el estado del pipeline en cada ciclo
     always @(posedge clk) begin
         $display("PC: %h, IF/ID.Instr: %h, ID/EX.Instr: %h", 

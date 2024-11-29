@@ -23,7 +23,7 @@ verilog xil_defaultlib  \
 "../../../../PipelinedProcessor.srcs/sources_1/new/reg7.v" \
 "../../../../PipelinedProcessor.srcs/sources_1/imports/PARQUI-main/regfile.v" \
 "../../../../PipelinedProcessor.srcs/sources_1/imports/PARQUI-main/top.v" \
-"../../../../PipelinedProcessor.srcs/sim_1/new/tb_top.v" \
+"../../../../PipelinedProcessor.srcs/sim_1/new/tb_pipelined.v" \
 
 # compile glbl module
 verilog xil_defaultlib "glbl.v"

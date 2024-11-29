@@ -26,7 +26,9 @@ module arm (
 		.MemWriteM(MemWriteM),
 		.PCSrcW(PCSrcW),
 		.RegWriteW(RegWriteW),
-		.MemtoRegW(MemtoRegW)
+		.MemtoRegW(MemtoRegW),
+		.ALUSrcE(ALUSrcE),
+		.ALUControlE(ALUControlE)
 	);
 	
 	datapath dp(
