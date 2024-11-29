@@ -1,10 +1,8 @@
 module arm (
 	input wire clk, reset,
-
 	input wire [31:0] InstrF, ReadDataM,
-
 	output wire [31:0] PCF, ALUResultM, WriteDataM,
-	output wire MemWriteM,
+	output wire MemWriteM
 );
 	wire [31:0] InstrD; //
 	wire [3:0] ALUFlags; //
@@ -39,7 +37,6 @@ module arm (
 		.ImmSrcD(ImmSrcD),
 		.ALUControlE(ALUControlE),
 		.ALUSrcE(ALUSrcE),
-		.MemWriteM(MemWriteM),
 		.PCSrcW(PCSrcW),
 		.RegWriteW(RegWriteW),
 		.MemtoRegW(MemtoRegW),

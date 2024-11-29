@@ -1,6 +1,5 @@
 module controller (
-	input wire clk, reset
-
+	input wire clk, reset,
 	input wire [31:12] InstrD,
 	input wire [3:0] ALUFlags,
 

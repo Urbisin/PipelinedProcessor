@@ -3,7 +3,7 @@ module datapath (
 	
 	input wire [31:0] InstrD, ReadDataM,
 	input wire [1:0] RegSrcD, ImmSrcD, ALUControlE,
-	input wire RegWriteW, ALUSrcE, MemWriteM, PCSrcW, MemtoRegW,
+	input wire RegWriteW, ALUSrcE, PCSrcW, MemtoRegW,
 
 	output wire [31:0] PCF, ALUResultM, WriteDataM,
 	output wire [3:0] ALUFlags
@@ -11,7 +11,7 @@ module datapath (
 	// Declare internal signals for all pipeline stages
 	wire [31:0] PCNext, PCPlus4F;
 	
-    wire [3:0] RA1D, RA2D, WA3D;
+    wire [3:0] RA1D, RA2D;
     wire [31:0] RD1D, RD2D, ExtImmD;
     
 	// EX (Execute) stage signals
@@ -90,9 +90,11 @@ module datapath (
         .rd1D(RD1D),
 		.rd2D(RD2D),
 		.ExtImmD(ExtImmD),
+		.wa3D(InstrD[15:12]),
 		.rd1E(SrcAE),
 		.rd2E(RD2E),
-		.ExtImmE(ExtImmE)
+		.ExtImmE(ExtImmE),
+		.wa3E(WA3E)
     );
     
 	mux2 #(32) srcbmux(

@@ -14,7 +14,6 @@ verilog xil_defaultlib  \
 "../../../../PipelinedProcessor.srcs/sources_1/imports/PARQUI-main/flopr.v" \
 "../../../../PipelinedProcessor.srcs/sources_1/imports/PARQUI-main/imem.v" \
 "../../../../PipelinedProcessor.srcs/sources_1/imports/PARQUI-main/mux2.v" \
-"../../../../PipelinedProcessor.srcs/sources_1/new/mux2r.v" \
 "../../../../PipelinedProcessor.srcs/sources_1/imports/PARQUI-main/reg1.v" \
 "../../../../PipelinedProcessor.srcs/sources_1/new/reg2.v" \
 "../../../../PipelinedProcessor.srcs/sources_1/new/reg3.v" \
@@ -24,7 +23,7 @@ verilog xil_defaultlib  \
 "../../../../PipelinedProcessor.srcs/sources_1/new/reg7.v" \
 "../../../../PipelinedProcessor.srcs/sources_1/imports/PARQUI-main/regfile.v" \
 "../../../../PipelinedProcessor.srcs/sources_1/imports/PARQUI-main/top.v" \
-"../../../../PipelinedProcessor.srcs/sim_1/new/tb_pipelined.v" \
+"../../../../PipelinedProcessor.srcs/sim_1/new/tb_top.v" \
 
 # compile glbl module
 verilog xil_defaultlib "glbl.v"

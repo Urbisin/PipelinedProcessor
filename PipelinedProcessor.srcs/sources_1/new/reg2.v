@@ -1,11 +1,9 @@
 module reg2(
     input wire clk, reset,
-
-    input wire PCSrcD, RegWriteD, MemtoRegD, MemWriteD, BranchD, ALUSrcD
+    input wire PCSrcD, RegWriteD, MemtoRegD, MemWriteD, BranchD, ALUSrcD,
     input wire [1:0] ALUControlD, FlagWriteD,
     input wire [3:0] CondD, Flags,
-
-    output reg PCSrcE, RegWriteE, MemtoRegE, MemWriteE, BranchE, ALUSrcE
+    output reg PCSrcE, RegWriteE, MemtoRegE, MemWriteE, BranchE, ALUSrcE,
     output reg [1:0] ALUControlE, FlagWriteE,
     output reg [3:0] CondE, FlagsE
 );	
