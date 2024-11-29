@@ -1,57 +1,21 @@
 module controller (
-	clk,
-	reset,
-	InstrD,
-	ALUFlags,
-    ImmSrcD,
-    RegSrcD,
-    MemWriteM,
-    PCSrcW,
-    RegWriteW,
-    MemtoRegW
+	input wire clk, reset,
+	input wire [31:12] InstrD,
+	input wire [3:0] ALUFlags,
+
+	output wire [1:0] ImmSrcD, RegSrcD,
+	output wire MemWriteM, PCSrcW, RegWriteW, MemtoRegW
 );
-	input wire clk;
-	input wire reset;
-	input wire [31:12] InstrD;
-	input wire [3:0] ALUFlags;
-	
-	output wire [1:0] ImmSrcD;
-	output wire [1:0] RegSrcD;
-	output wire MemWriteM;
-	output wire PCSrcW;
-	output wire RegWriteW;
-	output wire MemtoRegW;
-	
-	wire PCSrcD;
-	wire RegWriteD;
-	wire MemtoRegD;
-	wire MemWriteD;
-	wire [1:0] ALUControlD;
-	wire BranchD;
-	wire ALUSrcD;
-	wire [1:0] FlagWriteD;
+	wire PCSrcD, RegWriteD, MemtoRegD, MemWriteD, BranchD, ALUSrcD;
+	wire [1:0] ALUControlD, FlagWriteD;
 	wire [3:0] Flags;
 	
-	wire PCSrcE;
-	wire RegWriteE;
-	wire MemtoRegE;
-	wire MemWriteE;
-	wire [1:0] ALUControlE;
-	wire BranchE;
-	wire ALUSrcE;
-	wire [1:0] FlagWriteE;
-	wire [3:0] CondE;
-	wire [3:0] FlagsE;
+	wire PCSrcE, RegWriteE, MemtoRegE, MemWriteE, BranchE, ALUSrcE, CondExE;
+	wire [1:0] ALUControlE, FlagWriteE;
+	wire [3:0] CondE, FlagsE;
 	
-	wire CondExE;
-	wire PCSrcEA;
-	wire RegWriteEA;
-	wire MemWriteEA;
-	wire BranchEA;
-	
-	wire PCSrcM;
-	wire RegWriteM;
-	wire MemtoRegM;
+	wire PCSrcEA, RegWriteEA, MemWriteEA, BranchEA;
+	wire PCSrcM, RegWriteM, MemtoRegM;
 	
 	controlunit cut(
 		.Op(InstrD[27:26]),
@@ -61,9 +25,9 @@ module controller (
 		.RegWriteD(RegWriteD),
 		.MemtoRegD(MemtoRegD),
 		.MemWriteD(MemWriteD),
-		.ALUControlD(AluControlD),
+		.ALUControlD(ALUControlD),
 		.BranchD(BranchD),
-		.AluSrcD(AluSrcD),
+		.ALUSrcD(ALUSrcD),
 	    .FlagWriteD(FlagWriteD),
 		.ImmSrcD(ImmSrcD),
 		.RegSrcD(RegSrcD)	
@@ -76,9 +40,9 @@ module controller (
 	    .RegWriteD(RegWriteD),
 		.MemtoRegD(MemtoRegD),
 		.MemWriteD(MemWriteD),
-		.ALUControlD(AluControlD),
+		.ALUControlD(ALUControlD),
 		.BranchD(BranchD),
-		.AluSrcD(AluSrcD),
+		.ALUSrcD(ALUSrcD),
 	    .FlagWriteD(FlagWriteD),
 	    .CondD(InstrD[31:28]),
 	    .Flags(Flags),
@@ -86,9 +50,9 @@ module controller (
 	    .RegWriteE(RegWriteE),
 		.MemtoRegE(MemtoRegE),
 		.MemWriteE(MemWriteE),
-		.ALUControlE(AluControlE),
+		.ALUControlE(ALUControlE),
 		.BranchE(BranchE),
-		.AluSrcE(AluSrcE),
+		.ALUSrcE(ALUSrcE),
 	    .FlagWriteE(FlagWriteE),
 	    .CondE(CondE),
 	    .FlagsE(FlagsE)
@@ -104,11 +68,6 @@ module controller (
 		.CondExE(CondExE),
 		.Flags(Flags)
 	);
-	
-	assign BranchEA = BranchE & CondExE;
-	assign PCSrcEA = (PCSrcE & CondExE) | BranchEA;
-	assign RegWriteEA = RegWriteE & CondExE;
-	assign MemWriteEA = MemWriteE % CondExE;
 	
 	reg3 registerc2(
 	    .clk(clk),
@@ -133,4 +92,9 @@ module controller (
 		.RegWriteW(RegWriteW),
 		.MemtoRegW(MemtoRegW)
 	);
+	
+    assign BranchEA = BranchE & CondExE;
+	assign PCSrcEA = (PCSrcE & CondExE) | BranchEA;
+	assign RegWriteEA = RegWriteE & CondExE;
+	assign MemWriteEA = MemWriteE % CondExE;
 endmodule

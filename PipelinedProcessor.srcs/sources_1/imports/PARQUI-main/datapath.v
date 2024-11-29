@@ -1,65 +1,31 @@
 module datapath (
-	clk,
-	reset,
-	InstrD,
-	RegSrcD,
-	ImmSrcD,
-	ALUControlE,
-	ALUSrcE,
-	MemWriteM,
-	PCSrcW,
-	RegWriteW,
-	MemtoRegW,
-	ReadDataM,
-	PCF,
-	ALUFlags,
-	ALUResultM,
-	WriteDataM,
-); 
-	input wire clk;
-	input wire reset;
+	input wire clk, reset,
+	
+	input wire [31:0] InstrD, ReadDataM,
+	input wire [1:0] RegSrcD, ImmSrcD, ALUControlE,
+	input wire RegWriteW, ALUSrcE, PCSrcW, MemtoRegW,
 
-    input wire [31:0] InstrD;
-	input wire [1:0] RegSrcD;
-	input wire [1:0] ImmSrcD;
-	input wire RegWriteW;
-	input wire [1:0] ALUControlE;
-	input wire ALUSrcE;
-	input wire MemWriteM;
-	input wire PCSrcW;
-	input wire MemtoRegW;
-	input wire [31:0] ReadDataM;
-    
-    output wire [31:0] PCF;
-	output wire [3:0] ALUFlags;
-	output wire [31:0] ALUResultM;
-	output wire [31:0] WriteDataM;
+	output wire [31:0] PCF, ALUResultM, WriteDataM,
+	output wire [3:0] ALUFlags
+); 
+	// Declare internal signals for all pipeline stages
+	wire [31:0] PCNext, PCPlus4F;
 	
-// Declare internal signals for all pipeline stages
-	wire [31:0] PCNext;
-	wire [31:0] PCPlus4F;
-	
-	wire [31:0] PCPlus4D;
-    wire [3:0] RA1D, RA2D, WA3D;
+    wire [3:0] RA1D, RA2D;
     wire [31:0] RD1D, RD2D, ExtImmD;
     
 	// EX (Execute) stage signals
-	wire [3:0] RA1E, RA2E;
-    wire [31:0] RD1E, RD2E, ExtImmE;
+    wire [31:0] RD2E, ExtImmE;
+	
     wire [3:0] WA3E;
     wire [31:0] SrcAE, SrcBE, ALUResultE, WriteDataE;
     
     // MEM (Memory) stage signals
-    wire RegWriteM, MemtoRegM;
     wire [3:0] WA3M;
     
     // WB (Writeback) stage signals
     wire [31:0] ALUResultW, ReadDataW, ResultW;
     wire [3:0] WA3W;
-    wire PCSrcM;
-    
-    // Forwarding control signals
-    wire [1:0] ForwardAE, ForwardBE;
 	  
 	// Hazard Unit
 	// TODO
@@ -101,13 +67,13 @@ module datapath (
 	);
 	
 	regfile rf(
-		.clk(~clk),
+		.clk(clk),
 		.we3(RegWriteW),
 		.ra1(RA1D),
 		.ra2(RA2D),
 		.wa3(WA3W),
 		.wd3(ResultW),
-		.r15(PCPlus4D),
+		.r15(PCPlus4F),
 		.rd1(RD1D),
 		.rd2(RD2D),
 		.ra1E(RA1E),
@@ -124,7 +90,14 @@ module datapath (
     reg5 registerd1(
         .clk(clk),
         .reset(reset),
-        .
+        .rd1D(RD1D),
+		.rd2D(RD2D),
+		.ExtImmD(ExtImmD),
+		.wa3D(InstrD[15:12]),
+		.rd1E(SrcAE),
+		.rd2E(RD2E),
+		.ExtImmE(ExtImmE),
+		.wa3E(WA3E)
     );
     
 	mux2 #(32) srcbmux(
@@ -135,45 +108,39 @@ module datapath (
     );
 	
 	alu alu(
-        .SrcA(SrcAE),
-        .SrcB(SrcBE),
+        .a(SrcAE),
+        .b(SrcBE),
         .ALUControl(ALUControlE),
-        .ALUResult(ALUResultE),
+        .Result(ALUResultE),
         .ALUFlags(ALUFlags)
     );
     
-    ex_mem_reg ex_mem(
-        .clk(clk),
-        .reset(reset),
-        .PCSrcE(PCSrcE),
-        .RegWriteE(RegWriteE),
-        .MemtoRegE(MemtoRegE),
-        .MemWriteE(MemWriteE),
-        .ALUResultE(ALUResultE),
-        .WriteDataE(WriteDataE),
-        .WA3E(WA3E),
-        .PCSrcM(PCSrcM),
-        .RegWriteM(RegWriteM),
-        .MemtoRegM(MemtoRegM),
-        .MemWriteM(MemWriteM),
-        .ALUResultM(ALUResultM),
-        .WriteDataM(WriteDataM),
-        .WA3M(WA3M)
-    );
-    
-    mem_wb_reg mem_wb(
-        .clk(clk),
-        .reset(reset),
-        .PCSrcM(PCSrcM),
-        .RegWriteM(RegWriteM),
-        .MemtoRegM(MemtoRegM),
-        .ReadDataM(ReadDataM),
-        .ALUResultM(ALUResultM),
-        .WA3M(WA3M),
-        .RegWriteW(RegWriteW),
-        .MemtoRegW(MemtoRegW),
-        .ReadDataW(ReadDataW),
-        .ALUResultW(ALUResultW),
-        .WA3W(WA3W)
-    );
+    reg6 registerd2(
+		.clk(clk),
+		.reset(reset),
+		.ALUResultE(ALUResultE),
+		.WriteDataE(WriteDataE),
+		.WA3E(WA3E),
+		.ALUResultM(ALUResultM),
+		.WriteDataM(WriteDataM),
+		.WA3M(WA3M)
+	);
+
+	reg7 registerd3(
+		.clk(clk),
+		.reset(reset),
+		.ReadDataM(ReadDataM),
+		.ALUOutM(ALUResultM),
+		.WA3M(WA3M),
+		.ReadDataW(ReadDataW),
+		.ALUOutW(ALUResultW),
+		.WA3W(WA3W)
+	);
+
+	mux2 #(32) resultmux(
+		.d0(ALUResultW),
+		.d1(ReadDataW),
+		.s(MemtoRegW),
+		.y(ResultW)
+	);
 endmodule

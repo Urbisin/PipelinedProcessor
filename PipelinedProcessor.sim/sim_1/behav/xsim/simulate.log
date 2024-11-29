@@ -1,0 +1,131 @@
+Time resolution is 1 ps
+Reset activado: PCF inicializado en 0 en el ciclo 0
+PC: 00000000, MemWriteM: 0, DataAdr: 00000000, WriteDataM: 00000000
+Reset activado: PCF inicializado en 0 en el ciclo 5000
+PC: 00000000, MemWriteM: 0, DataAdr: 00000000, WriteDataM: 00000000
+PCF: 00000000, PCNext: 00000004, PCSrcW: 0, ResultW: 00000000
+PC: 00000004, MemWriteM: x, DataAdr: xxxxxxxx, WriteDataM: zzzzzzzz
+PCF: 00000004, PCNext: 00000008, PCSrcW: 0, ResultW: 00000000
+PC: 00000008, MemWriteM: x, DataAdr: xxxxxxxx, WriteDataM: zzzzzzzz
+PCF: 00000008, PCNext: 0000000c, PCSrcW: 0, ResultW: xxxxxxxx
+PC: 0000000c, MemWriteM: 0, DataAdr: xxxxxxxx, WriteDataM: zzzzzzzz
+PCF: 0000000c, PCNext: 00000010, PCSrcW: 0, ResultW: xxxxxxxx
+PC: 00000010, MemWriteM: 0, DataAdr: xxxxxxxx, WriteDataM: zzzzzzzz
+PCF: 00000010, PCNext: 00000014, PCSrcW: 0, ResultW: xxxxxxxx
+PC: 00000014, MemWriteM: x, DataAdr: xxxxxxxx, WriteDataM: zzzzzzzz
+PCF: 00000014, PCNext: 00000018, PCSrcW: 0, ResultW: xxxxxxxx
+PC: 00000018, MemWriteM: x, DataAdr: xxxxxxxx, WriteDataM: zzzzzzzz
+PCF: 00000018, PCNext: xxxxxxxx, PCSrcW: x, ResultW: xxxxxxxx
+ERROR: PCSrcW tiene un valor indefinido en el ciclo 75000
+PC: xxxxxxxx, MemWriteM: x, DataAdr: xxxxxxxx, WriteDataM: zzzzzzzz
+PCF: xxxxxxxx, PCNext: xxxxxxxx, PCSrcW: x, ResultW: xxxxxxxx
+ERROR: PCSrcW tiene un valor indefinido en el ciclo 85000
+PC: xxxxxxxx, MemWriteM: x, DataAdr: xxxxxxxx, WriteDataM: zzzzzzzz
+PCF: xxxxxxxx, PCNext: xxxxxxxx, PCSrcW: x, ResultW: xxxxxxxx
+ERROR: PCSrcW tiene un valor indefinido en el ciclo 95000
+PC: xxxxxxxx, MemWriteM: x, DataAdr: xxxxxxxx, WriteDataM: zzzzzzzz
+PCF: xxxxxxxx, PCNext: xxxxxxxx, PCSrcW: x, ResultW: xxxxxxxx
+ERROR: PCSrcW tiene un valor indefinido en el ciclo 105000
+PC: xxxxxxxx, MemWriteM: x, DataAdr: xxxxxxxx, WriteDataM: zzzzzzzz
+PCF: xxxxxxxx, PCNext: xxxxxxxx, PCSrcW: x, ResultW: xxxxxxxx
+ERROR: PCSrcW tiene un valor indefinido en el ciclo 115000
+PC: xxxxxxxx, MemWriteM: x, DataAdr: xxxxxxxx, WriteDataM: zzzzzzzz
+PCF: xxxxxxxx, PCNext: xxxxxxxx, PCSrcW: x, ResultW: xxxxxxxx
+ERROR: PCSrcW tiene un valor indefinido en el ciclo 125000
+PC: xxxxxxxx, MemWriteM: x, DataAdr: xxxxxxxx, WriteDataM: zzzzzzzz
+PCF: xxxxxxxx, PCNext: xxxxxxxx, PCSrcW: x, ResultW: xxxxxxxx
+ERROR: PCSrcW tiene un valor indefinido en el ciclo 135000
+PC: xxxxxxxx, MemWriteM: x, DataAdr: xxxxxxxx, WriteDataM: zzzzzzzz
+PCF: xxxxxxxx, PCNext: xxxxxxxx, PCSrcW: x, ResultW: xxxxxxxx
+ERROR: PCSrcW tiene un valor indefinido en el ciclo 145000
+PC: xxxxxxxx, MemWriteM: x, DataAdr: xxxxxxxx, WriteDataM: zzzzzzzz
+PCF: xxxxxxxx, PCNext: xxxxxxxx, PCSrcW: x, ResultW: xxxxxxxx
+ERROR: PCSrcW tiene un valor indefinido en el ciclo 155000
+PC: xxxxxxxx, MemWriteM: x, DataAdr: xxxxxxxx, WriteDataM: zzzzzzzz
+PCF: xxxxxxxx, PCNext: xxxxxxxx, PCSrcW: x, ResultW: xxxxxxxx
+ERROR: PCSrcW tiene un valor indefinido en el ciclo 165000
+PC: xxxxxxxx, MemWriteM: x, DataAdr: xxxxxxxx, WriteDataM: zzzzzzzz
+PCF: xxxxxxxx, PCNext: xxxxxxxx, PCSrcW: x, ResultW: xxxxxxxx
+ERROR: PCSrcW tiene un valor indefinido en el ciclo 175000
+PC: xxxxxxxx, MemWriteM: x, DataAdr: xxxxxxxx, WriteDataM: zzzzzzzz
+PCF: xxxxxxxx, PCNext: xxxxxxxx, PCSrcW: x, ResultW: xxxxxxxx
+ERROR: PCSrcW tiene un valor indefinido en el ciclo 185000
+PC: xxxxxxxx, MemWriteM: x, DataAdr: xxxxxxxx, WriteDataM: zzzzzzzz
+PCF: xxxxxxxx, PCNext: xxxxxxxx, PCSrcW: x, ResultW: xxxxxxxx
+ERROR: PCSrcW tiene un valor indefinido en el ciclo 195000
+PC: xxxxxxxx, MemWriteM: x, DataAdr: xxxxxxxx, WriteDataM: zzzzzzzz
+PCF: xxxxxxxx, PCNext: xxxxxxxx, PCSrcW: x, ResultW: xxxxxxxx
+ERROR: PCSrcW tiene un valor indefinido en el ciclo 205000
+PC: xxxxxxxx, MemWriteM: x, DataAdr: xxxxxxxx, WriteDataM: zzzzzzzz
+PCF: xxxxxxxx, PCNext: xxxxxxxx, PCSrcW: x, ResultW: xxxxxxxx
+ERROR: PCSrcW tiene un valor indefinido en el ciclo 215000
+PC: xxxxxxxx, MemWriteM: x, DataAdr: xxxxxxxx, WriteDataM: zzzzzzzz
+PCF: xxxxxxxx, PCNext: xxxxxxxx, PCSrcW: x, ResultW: xxxxxxxx
+ERROR: PCSrcW tiene un valor indefinido en el ciclo 225000
+PC: xxxxxxxx, MemWriteM: x, DataAdr: xxxxxxxx, WriteDataM: zzzzzzzz
+PCF: xxxxxxxx, PCNext: xxxxxxxx, PCSrcW: x, ResultW: xxxxxxxx
+ERROR: PCSrcW tiene un valor indefinido en el ciclo 235000
+PC: xxxxxxxx, MemWriteM: x, DataAdr: xxxxxxxx, WriteDataM: zzzzzzzz
+PCF: xxxxxxxx, PCNext: xxxxxxxx, PCSrcW: x, ResultW: xxxxxxxx
+ERROR: PCSrcW tiene un valor indefinido en el ciclo 245000
+PC: xxxxxxxx, MemWriteM: x, DataAdr: xxxxxxxx, WriteDataM: zzzzzzzz
+PCF: xxxxxxxx, PCNext: xxxxxxxx, PCSrcW: x, ResultW: xxxxxxxx
+ERROR: PCSrcW tiene un valor indefinido en el ciclo 255000
+PC: xxxxxxxx, MemWriteM: x, DataAdr: xxxxxxxx, WriteDataM: zzzzzzzz
+PCF: xxxxxxxx, PCNext: xxxxxxxx, PCSrcW: x, ResultW: xxxxxxxx
+ERROR: PCSrcW tiene un valor indefinido en el ciclo 265000
+PC: xxxxxxxx, MemWriteM: x, DataAdr: xxxxxxxx, WriteDataM: zzzzzzzz
+PCF: xxxxxxxx, PCNext: xxxxxxxx, PCSrcW: x, ResultW: xxxxxxxx
+ERROR: PCSrcW tiene un valor indefinido en el ciclo 275000
+PC: xxxxxxxx, MemWriteM: x, DataAdr: xxxxxxxx, WriteDataM: zzzzzzzz
+PCF: xxxxxxxx, PCNext: xxxxxxxx, PCSrcW: x, ResultW: xxxxxxxx
+ERROR: PCSrcW tiene un valor indefinido en el ciclo 285000
+PC: xxxxxxxx, MemWriteM: x, DataAdr: xxxxxxxx, WriteDataM: zzzzzzzz
+PCF: xxxxxxxx, PCNext: xxxxxxxx, PCSrcW: x, ResultW: xxxxxxxx
+ERROR: PCSrcW tiene un valor indefinido en el ciclo 295000
+PC: xxxxxxxx, MemWriteM: x, DataAdr: xxxxxxxx, WriteDataM: zzzzzzzz
+PCF: xxxxxxxx, PCNext: xxxxxxxx, PCSrcW: x, ResultW: xxxxxxxx
+ERROR: PCSrcW tiene un valor indefinido en el ciclo 305000
+PC: xxxxxxxx, MemWriteM: x, DataAdr: xxxxxxxx, WriteDataM: zzzzzzzz
+PCF: xxxxxxxx, PCNext: xxxxxxxx, PCSrcW: x, ResultW: xxxxxxxx
+ERROR: PCSrcW tiene un valor indefinido en el ciclo 315000
+PC: xxxxxxxx, MemWriteM: x, DataAdr: xxxxxxxx, WriteDataM: zzzzzzzz
+PCF: xxxxxxxx, PCNext: xxxxxxxx, PCSrcW: x, ResultW: xxxxxxxx
+ERROR: PCSrcW tiene un valor indefinido en el ciclo 325000
+PC: xxxxxxxx, MemWriteM: x, DataAdr: xxxxxxxx, WriteDataM: zzzzzzzz
+PCF: xxxxxxxx, PCNext: xxxxxxxx, PCSrcW: x, ResultW: xxxxxxxx
+ERROR: PCSrcW tiene un valor indefinido en el ciclo 335000
+PC: xxxxxxxx, MemWriteM: x, DataAdr: xxxxxxxx, WriteDataM: zzzzzzzz
+PCF: xxxxxxxx, PCNext: xxxxxxxx, PCSrcW: x, ResultW: xxxxxxxx
+ERROR: PCSrcW tiene un valor indefinido en el ciclo 345000
+PC: xxxxxxxx, MemWriteM: x, DataAdr: xxxxxxxx, WriteDataM: zzzzzzzz
+PCF: xxxxxxxx, PCNext: xxxxxxxx, PCSrcW: x, ResultW: xxxxxxxx
+ERROR: PCSrcW tiene un valor indefinido en el ciclo 355000
+PC: xxxxxxxx, MemWriteM: x, DataAdr: xxxxxxxx, WriteDataM: zzzzzzzz
+PCF: xxxxxxxx, PCNext: xxxxxxxx, PCSrcW: x, ResultW: xxxxxxxx
+ERROR: PCSrcW tiene un valor indefinido en el ciclo 365000
+PC: xxxxxxxx, MemWriteM: x, DataAdr: xxxxxxxx, WriteDataM: zzzzzzzz
+PCF: xxxxxxxx, PCNext: xxxxxxxx, PCSrcW: x, ResultW: xxxxxxxx
+ERROR: PCSrcW tiene un valor indefinido en el ciclo 375000
+PC: xxxxxxxx, MemWriteM: x, DataAdr: xxxxxxxx, WriteDataM: zzzzzzzz
+PCF: xxxxxxxx, PCNext: xxxxxxxx, PCSrcW: x, ResultW: xxxxxxxx
+ERROR: PCSrcW tiene un valor indefinido en el ciclo 385000
+PC: xxxxxxxx, MemWriteM: x, DataAdr: xxxxxxxx, WriteDataM: zzzzzzzz
+PCF: xxxxxxxx, PCNext: xxxxxxxx, PCSrcW: x, ResultW: xxxxxxxx
+ERROR: PCSrcW tiene un valor indefinido en el ciclo 395000
+PC: xxxxxxxx, MemWriteM: x, DataAdr: xxxxxxxx, WriteDataM: zzzzzzzz
+PCF: xxxxxxxx, PCNext: xxxxxxxx, PCSrcW: x, ResultW: xxxxxxxx
+ERROR: PCSrcW tiene un valor indefinido en el ciclo 405000
+PC: xxxxxxxx, MemWriteM: x, DataAdr: xxxxxxxx, WriteDataM: zzzzzzzz
+PCF: xxxxxxxx, PCNext: xxxxxxxx, PCSrcW: x, ResultW: xxxxxxxx
+ERROR: PCSrcW tiene un valor indefinido en el ciclo 415000
+PC: xxxxxxxx, MemWriteM: x, DataAdr: xxxxxxxx, WriteDataM: zzzzzzzz
+PCF: xxxxxxxx, PCNext: xxxxxxxx, PCSrcW: x, ResultW: xxxxxxxx
+ERROR: PCSrcW tiene un valor indefinido en el ciclo 425000
+PC: xxxxxxxx, MemWriteM: x, DataAdr: xxxxxxxx, WriteDataM: zzzzzzzz
+PCF: xxxxxxxx, PCNext: xxxxxxxx, PCSrcW: x, ResultW: xxxxxxxx
+ERROR: PCSrcW tiene un valor indefinido en el ciclo 435000
+PC: xxxxxxxx, MemWriteM: x, DataAdr: xxxxxxxx, WriteDataM: zzzzzzzz
+PCF: xxxxxxxx, PCNext: xxxxxxxx, PCSrcW: x, ResultW: xxxxxxxx
+ERROR: PCSrcW tiene un valor indefinido en el ciclo 445000
+PC: xxxxxxxx, MemWriteM: x, DataAd
