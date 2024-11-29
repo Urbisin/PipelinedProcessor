@@ -75,7 +75,10 @@ module datapath (
 		.wd3(ResultW),
 		.r15(PCPlus4F),
 		.rd1(RD1D),
-		.rd2(RD2D)
+		.rd2(RD2D),
+		.ra1E(RA1E),
+		.ra2E(RA2E)
+
 	);
 	
 	extend ext(
