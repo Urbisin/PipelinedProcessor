@@ -1,6 +1,7 @@
 module alu(
     input [31:0] a, b,
     input [1:0] ALUControl,
+    
     output reg [31:0] Result,
     output wire [3:0] ALUFlags
 );
@@ -10,6 +11,7 @@ module alu(
     
     assign condinvb = ALUControl[0] ? ~b : b;
     assign sum = a + condinvb + ALUControl[0];
+    
     always @(*)
         begin
         casex (ALUControl[1:0])

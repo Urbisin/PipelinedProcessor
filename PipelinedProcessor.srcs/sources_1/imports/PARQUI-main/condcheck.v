@@ -1,20 +1,12 @@
 module condcheck (
-	CondE,
-	FlagsE,
-	CondExE
+	input wire [3:0] CondE, FlagsE,
+	output reg CondExE
 );
-	input wire [3:0] CondE;
-	input wire [3:0] FlagsE;
-	
-	output reg CondExE;
-	
-	wire neg;
-	wire zero;
-	wire carry;
-	wire overflow;
-	wire ge;
+	wire neg, zero, carry, overflow, ge;
+
 	assign {neg, zero, carry, overflow} = FlagsE;
 	assign ge = neg == overflow;
+	
 	always @(*)
 		case (CondE)
 			4'b0000: CondExE = zero;

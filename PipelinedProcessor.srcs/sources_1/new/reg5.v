@@ -1,14 +1,9 @@
 module reg5(
-    input wire clk,
-    input wire reset,
+    input wire clk, reset,
 
-    input wire [31:0] rd1D, 
-    input wire [31:0] rd2D,
-    input wire [31:0] ExtImmD,
-
-    output reg [31:0] rd1E,
-    output reg [31:0] rd2E,
-    output reg [31:0] ExtImmE
+    input wire [31:0] rd1D, rd2D, ExtImmD,
+    
+    output reg [31:0] rd1E, rd2E, ExtImmE,
 );
     always @ (posedge clk, posedge reset) begin
         if (reset) begin

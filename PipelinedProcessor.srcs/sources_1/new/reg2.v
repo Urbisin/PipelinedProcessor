@@ -1,52 +1,14 @@
 module reg2(
-    clk,
-    reset,
-    PCSrcD,
-    RegWriteD,
-    MemtoRegD,
-    MemWriteD,
-    ALUControlD,
-    BranchD,
-    ALUSrcD,
-    FlagWriteD,
-    CondD,
-    Flags,
-    PCSrcE,
-    RegWriteE,
-    MemtoRegE,
-    MemWriteE,
-    ALUControlE,
-    BranchE,
-    ALUSrcE,
-    FlagWriteE,
-    CondE,
-    FlagsE
-);
-    input wire clk;
-	input wire reset;
-    
-    input wire PCSrcD;
-	input wire RegWriteD;
-	input wire MemtoRegD;
-	input wire MemWriteD;
-	input wire [1:0] ALUControlD;
-	input wire BranchD;
-	input wire ALUSrcD;
-	input wire [1:0] FlagWriteD;
-	input wire [3:0] CondD;
-	input wire [3:0] Flags;
-	
-	output reg PCSrcE;
-	output reg RegWriteE;
-	output reg MemtoRegE;
-	output reg MemWriteE;
-	output reg [1:0] ALUControlE;
-	output reg BranchE;
-	output reg ALUSrcE;
-	output reg [1:0] FlagWriteE;
-	output reg [3:0] CondE;
-	output reg [3:0] FlagsE;
-    
+    input wire clk, reset,
+
+    input wire PCSrcD, RegWriteD, MemtoRegD, MemWriteD, BranchD, ALUSrcD
+    input wire [1:0] ALUControlD, FlagWriteD,
+    input wire [3:0] CondD, Flags,
+
+    output reg PCSrcE, RegWriteE, MemtoRegE, MemWriteE, BranchE, ALUSrcE
+    output reg [1:0] ALUControlE, FlagWriteE,
+    output reg [3:0] CondE, FlagsE
+);	
     always @(posedge clk, posedge reset) begin
         if (reset) begin
             PCSrcE <= 0;

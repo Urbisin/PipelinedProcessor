@@ -1,43 +1,15 @@
 module datapath (
-	clk,
-	reset,
-	InstrD,
-	RegSrcD,
-	ImmSrcD,
-	ALUControlE,
-	ALUSrcE,
-	MemWriteM,
-	PCSrcW,
-	RegWriteW,
-	MemtoRegW,
-	ReadDataM,
-	PCF,
-	ALUFlags,
-	ALUResultM,
-	WriteDataM
-); 
-	input wire clk;
-	input wire reset;
-
-    input wire [31:0] InstrD;
-	input wire [1:0] RegSrcD;
-	input wire [1:0] ImmSrcD;
-	input wire RegWriteW;
-	input wire [1:0] ALUControlE;
-	input wire ALUSrcE;
-	input wire MemWriteM;
-	input wire PCSrcW;
-	input wire MemtoRegW;
-	input wire [31:0] ReadDataM;
-    
-    output wire [31:0] PCF;
-	output wire [3:0] ALUFlags;
-	output wire [31:0] ALUResultM;
-	output wire [31:0] WriteDataM;
+	input wire clk, reset,
 	
-// Declare internal signals for all pipeline stages
-	wire [31:0] PCNext;
-	wire [31:0] PCPlus4F;
+	input wire [31:0] InstrD, ReadDataM,
+	input wire [1:0] RegSrcD, ImmSrcD, ALUControlE,
+	input wire RegWriteW, ALUSrcE, MemWriteM, PCSrcW, MemtoRegW,
+
+	output wire [31:0] PCF, ALUResultM, WriteDataM,
+	output wire [3:0] ALUFlags
+); 
+	// Declare internal signals for all pipeline stages
+	wire [31:0] PCNext, PCPlus4F;
 	
     wire [3:0] RA1D, RA2D, WA3D;
     wire [31:0] RD1D, RD2D, ExtImmD;
@@ -160,7 +132,7 @@ module datapath (
 		.WA3W(WA3W)
 	);
 
-	mux2r resultmux(
+	mux2 #(32) resultmux(
 		.d0(ALUResultW),
 		.d1(ReadDataW),
 		.s(MemtoRegW),

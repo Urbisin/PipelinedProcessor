@@ -1,37 +1,16 @@
 module controlunit (
-	Op,
-	Funct,
-	Rd,
-	PCSrcD,
-	RegWriteD,
-	MemtoRegD,
-	MemWriteD,
-	ALUControlD,
-	BranchD,
-	ALUSrcD,
-	FlagWriteD,
-	ImmSrcD,
-	RegSrcD
+	input wire [1:0] Op,
+	input wire [5:0] Funct,
+	input wire [3:0] Rd,
+
+	output wire PCSrcD, RegWriteD, MemtoRegD, MemWriteD, BranchD, ALUSrcD,
+
+	output reg [1:0] ALUControlD, FlagWriteD,
+	output wire [1:0] ImmSrcD, RegSrcD
 );
-	input wire [1:0] Op;	
-	input wire [5:0] Funct;
-	input wire [3:0] Rd;
-	
-	output wire PCSrcD;
-	output wire RegWriteD;
-	output wire MemtoRegD;
-	output wire MemWriteD;
-	output reg [1:0] ALUControlD;
-	output wire BranchD;
-	output wire ALUSrcD;
-	output reg [1:0] FlagWriteD;
-	
-	output wire [1:0] ImmSrcD;
-	output wire [1:0] RegSrcD;
-	
 	reg [9:0] controls;
-	wire Branch;
-	wire ALUOp;
+	wire Branch, ALUOp;
+
 	always @(*)
 		casex (Op)
 			2'b00:
@@ -47,7 +26,9 @@ module controlunit (
 			2'b10: controls = 10'b0110100010;
 			default: controls = 10'bxxxxxxxxxx;
 		endcase
+
 	assign {RegSrcD, ImmSrcD, ALUSrcD, MemtoRegD, RegWriteD, MemWriteD, BranchD, ALUOp} = controls;
+	
 	always @(*)
 		if (ALUOp) begin
 			case (Funct[4:1])
@@ -64,5 +45,6 @@ module controlunit (
 			ALUControlD = 2'b00;
 			FlagWriteD = 2'b00;
 		end
+
 	assign PCSrcD = ((Rd == 4'b1111) & RegWriteD) | BranchD;
 endmodule

@@ -1,24 +1,9 @@
 module reg4(
-    clk,
-    reset,
-    PCSrcM,
-    RegWriteM,
-    MemtoRegM,
-    PCSrcW,
-    RegWriteW,
-    MemtoRegW
+    input wire clk, reset,
+    input wire PCSrcM, RegWriteM, MemtoRegM,
+
+    output reg PCSrcW, RegWriteW, MemtoRegW
 );
-    input wire clk;
-    input wire reset;
-    
-    input wire PCSrcM;
-    input wire RegWriteM;
-    input wire MemtoRegM;
-    
-    output reg PCSrcW;
-    output reg RegWriteW;
-    output reg MemtoRegW;
-    
     always @(posedge clk, posedge reset) begin
         if (reset) begin
             PCSrcW <= 0;

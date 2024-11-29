@@ -1,0 +1,52 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/mayko/Desktop/project/PipelinedProcessor/PipelinedProcessor.srcs/sources_1/imports/PARQUI-main/adder.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module adder
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/mayko/Desktop/project/PipelinedProcessor/PipelinedProcessor.srcs/sources_1/imports/PARQUI-main/alu.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module alu
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/mayko/Desktop/project/PipelinedProcessor/PipelinedProcessor.srcs/sources_1/imports/PARQUI-main/arm.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module arm
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/mayko/Desktop/project/PipelinedProcessor/PipelinedProcessor.srcs/sources_1/imports/PARQUI-main/condcheck.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module condcheck
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/mayko/Desktop/project/PipelinedProcessor/PipelinedProcessor.srcs/sources_1/imports/PARQUI-main/condunit.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module condunit
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/mayko/Desktop/project/PipelinedProcessor/PipelinedProcessor.srcs/sources_1/imports/PARQUI-main/controller.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module controller
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/mayko/Desktop/project/PipelinedProcessor/PipelinedProcessor.srcs/sources_1/imports/PARQUI-main/controlunit.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module controlunit
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/mayko/Desktop/project/PipelinedProcessor/PipelinedProcessor.srcs/sources_1/imports/PARQUI-main/datapath.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module datapath
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/mayko/Desktop/project/PipelinedProcessor/PipelinedProcessor.srcs/sources_1/imports/PARQUI-main/dmem.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module dmem
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/mayko/Desktop/project/PipelinedProcessor/PipelinedProcessor.srcs/sources_1/imports/PARQUI-main/extend.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module extend
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/mayko/Desktop/project/PipelinedProcessor/PipelinedProcessor.srcs/sources_1/imports/PARQUI-main/flopenr.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module flopenr
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/mayko/Desktop/project/PipelinedProcessor/PipelinedProcessor.srcs/sources_1/imports/PARQUI-main/flopr.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module flopr
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/mayko/Desktop/project/PipelinedProcessor/PipelinedProcessor.srcs/sources_1/imports/PARQUI-main/imem.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module imem
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/mayko/Desktop/project/PipelinedProcessor/PipelinedProcessor.srcs/sources_1/imports/PARQUI-main/mux2.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mux2
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/mayko/Desktop/project/PipelinedProcessor/PipelinedProcessor.srcs/sources_1/new/mux2r.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mux2r
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/mayko/Desktop/project/PipelinedProcessor/PipelinedProcessor.srcs/sources_1/imports/PARQUI-main/reg1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module reg1
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/mayko/Desktop/project/PipelinedProcessor/PipelinedProcessor.srcs/sources_1/new/reg2.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module reg2
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/mayko/Desktop/project/PipelinedProcessor/PipelinedProcessor.srcs/sources_1/new/reg3.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module reg3
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/mayko/Desktop/project/PipelinedProcessor/PipelinedProcessor.srcs/sources_1/new/reg4.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module reg4
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/mayko/Desktop/project/PipelinedProcessor/PipelinedProcessor.srcs/sources_1/new/reg5.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module reg5
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/mayko/Desktop/project/PipelinedProcessor/PipelinedProcessor.srcs/sources_1/new/reg6.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module reg6
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/mayko/Desktop/project/PipelinedProcessor/PipelinedProcessor.srcs/sources_1/new/reg7.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module reg7
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/mayko/Desktop/project/PipelinedProcessor/PipelinedProcessor.srcs/sources_1/imports/PARQUI-main/regfile.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module regfile
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/mayko/Desktop/project/PipelinedProcessor/PipelinedProcessor.srcs/sources_1/imports/PARQUI-main/top.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module top
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/mayko/Desktop/project/PipelinedProcessor/PipelinedProcessor.srcs/sim_1/new/tb_pipelined.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module pipelined
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/mayko/Desktop/project/PipelinedProcessor/PipelinedProcessor.sim/sim_1/behav/xsim/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl

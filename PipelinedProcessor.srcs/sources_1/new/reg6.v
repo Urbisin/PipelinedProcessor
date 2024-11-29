@@ -1,13 +1,10 @@
 module reg6(
-    input wire clk,
-    input wire reset,
+    input wire clk, reset,
 
-    input wire [31:0] ALUResultE,
-    input wire [31:0] WriteDataE,
+    input wire [31:0] ALUResultE, WriteDataE,
     input wire [3:0] WA3E,
 
-    output reg [31:0] ALUResultM,
-    output reg [31:0] WriteDataM,
+    output reg [31:0] ALUResultM, WriteDataM,
     output reg [3:0] WA3M
 );
     always @ (posedge clk, posedge reset) begin
