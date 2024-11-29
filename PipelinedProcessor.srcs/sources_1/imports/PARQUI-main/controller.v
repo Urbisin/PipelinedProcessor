@@ -105,11 +105,6 @@ module controller (
 		.Flags(Flags)
 	);
 	
-	assign BranchEA = BranchE & CondExE;
-	assign PCSrcEA = (PCSrcE & CondExE) | BranchEA;
-	assign RegWriteEA = RegWriteE & CondExE;
-	assign MemWriteEA = MemWriteE % CondExE;
-	
 	reg3 registerc2(
 	    .clk(clk),
 		.reset(reset),
@@ -133,4 +128,10 @@ module controller (
 		.RegWriteW(RegWriteW),
 		.MemtoRegW(MemtoRegW)
 	);
+	
+    assign BranchEA = BranchE & CondExE;
+	assign PCSrcEA = (PCSrcE & CondExE) | BranchEA;
+	assign RegWriteEA = RegWriteE & CondExE;
+	assign MemWriteEA = MemWriteE % CondExE;
+	
 endmodule

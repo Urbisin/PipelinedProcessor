@@ -39,7 +39,6 @@ module datapath (
 	wire [31:0] PCNext;
 	wire [31:0] PCPlus4F;
 	
-	wire [31:0] PCPlus4D;
     wire [3:0] RA1D, RA2D, WA3D;
     wire [31:0] RD1D, RD2D, ExtImmD;
     
@@ -96,13 +95,13 @@ module datapath (
 	);
 	
 	regfile rf(
-		.clk(~clk),
+		.clk(clk),
 		.we3(RegWriteW),
 		.ra1(RA1D),
 		.ra2(RA2D),
 		.wa3(WA3W),
 		.wd3(ResultW),
-		.r15(PCPlus4D),
+		.r15(PCPlus4F),
 		.rd1(RD1D),
 		.rd2(RD2D)
 	);

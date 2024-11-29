@@ -28,6 +28,13 @@ module arm (
 	wire [1:0] ImmSrcD; //
 	wire [1:0] ALUControlE; //
 	
+	reg1 registerarm1(
+	    .clk(clk),
+	    .reset(reset),
+        .InstrF(InstrF),
+        .InstrD(InstrD)
+	);
+	
 	controller c(
 		.clk(clk),
 		.reset(reset),
@@ -58,12 +65,5 @@ module arm (
 		.ALUFlags(ALUFlags),
 		.ALUResultM(ALUResultM),
 		.WriteDataM(WriteDataM)
-	);
-	
-	reg1 registerarm1(
-	    .clk(clk),
-	    .reset(reset),
-        .InstrF(InstrF),
-        .InstrD(InstrD)
 	);
 endmodule
