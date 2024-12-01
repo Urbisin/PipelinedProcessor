@@ -3,19 +3,23 @@ module controller (
 	input wire [31:12] InstrD,
 	input wire [3:0] ALUFlags,
 
+	input wire FlushE,
+
 	output wire [1:0] ImmSrcD, RegSrcD, ALUControlE,
-	output wire MemWriteM, PCSrcW, RegWriteW, MemtoRegW, ALUSrcE
+	output wire MemWriteM, PCSrcW, RegWriteW, MemtoRegW, ALUSrcE,
+	output wire RegWriteE, RegWriteM, MemtoRegE, BranchD, PCSrcD, PCSrcE, PCSrcM,
+	output wire BranchTakenE
 );
-	wire PCSrcD, RegWriteD, MemtoRegD, MemWriteD, BranchD, ALUSrcD;
+	wire RegWriteD, MemtoRegD, MemWriteD, ALUSrcD;
 	wire [1:0] ALUControlD, FlagWriteD;
 	wire [3:0] Flags;
 	
-	wire PCSrcE, RegWriteE, MemtoRegE, MemWriteE, BranchE, CondExE;
+	wire MemWriteE, BranchE, CondExE;
 	wire [1:0] FlagWriteE;
 	wire [3:0] CondE, FlagsE;
 	
-	wire PCSrcEA, RegWriteEA, MemWriteEA, BranchEA;
-	wire PCSrcM, RegWriteM, MemtoRegM;
+	wire PCSrcEA, RegWriteEA, MemWriteEA;
+	wire MemtoRegM;
 	
 	controlunit cut(
 		.Op(InstrD[27:26]),
@@ -36,6 +40,7 @@ module controller (
 	reg2 registerc1(
 	    .clk(clk),
 	    .reset(reset),
+		.FlushE(FlushE),
 	    .PCSrcD(PCSrcD),
 	    .RegWriteD(RegWriteD),
 		.MemtoRegD(MemtoRegD),
@@ -93,8 +98,8 @@ module controller (
 		.MemtoRegW(MemtoRegW)
 	);
 	
-    assign BranchEA = BranchE & CondExE;
-	assign PCSrcEA = (PCSrcE & CondExE) | BranchEA;
+    assign BranchTakenE = BranchE & CondExE;
+	assign PCSrcEA = PCSrcE & CondExE;
 	assign RegWriteEA = RegWriteE & CondExE;
-	assign MemWriteEA = MemWriteE % CondExE;
+	assign MemWriteEA = MemWriteE & CondExE;
 endmodule

@@ -11,9 +11,10 @@ verilog xil_defaultlib  \
 "../../../../PipelinedProcessor.srcs/sources_1/imports/PARQUI-main/dmem.v" \
 "../../../../PipelinedProcessor.srcs/sources_1/imports/PARQUI-main/extend.v" \
 "../../../../PipelinedProcessor.srcs/sources_1/imports/PARQUI-main/flopenr.v" \
-"../../../../PipelinedProcessor.srcs/sources_1/imports/PARQUI-main/flopr.v" \
+"../../../../PipelinedProcessor.srcs/sources_1/imports/PARQUI-main/hunit.v" \
 "../../../../PipelinedProcessor.srcs/sources_1/imports/PARQUI-main/imem.v" \
 "../../../../PipelinedProcessor.srcs/sources_1/imports/PARQUI-main/mux2.v" \
+"../../../../PipelinedProcessor.srcs/sources_1/imports/PARQUI-main/mux3.v" \
 "../../../../PipelinedProcessor.srcs/sources_1/imports/PARQUI-main/reg1.v" \
 "../../../../PipelinedProcessor.srcs/sources_1/new/reg2.v" \
 "../../../../PipelinedProcessor.srcs/sources_1/new/reg3.v" \
