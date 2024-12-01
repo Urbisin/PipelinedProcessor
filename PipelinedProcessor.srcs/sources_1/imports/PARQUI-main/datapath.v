@@ -2,8 +2,9 @@ module datapath (
 	input wire clk, reset,
 	
 	input wire [31:0] InstrD, ReadDataM,
-	input wire [1:0] RegSrcD, ImmSrcD, ALUControlE,
-	input wire RegWriteW, ALUSrcE, PCSrcW, MemtoRegW,
+	input wire [1:0] RegSrcD, ImmSrcD,
+	input wire [2:0] ALUControlE,
+	input wire RegWriteW, ALUSrcE, PCSrcW, MemtoRegW, isMOVE,
 
 	output wire [31:0] PCF, ALUResultM, WriteDataM,
 	output wire [3:0] ALUFlags
@@ -108,6 +109,7 @@ module datapath (
         .a(SrcAE),
         .b(SrcBE),
         .ALUControl(ALUControlE),
+        .isMOVE(isMOVE),
         .Result(ALUResultE),
         .ALUFlags(ALUFlags)
     );

@@ -3,11 +3,13 @@ module controller (
 	input wire [31:12] InstrD,
 	input wire [3:0] ALUFlags,
 
-	output wire [1:0] ImmSrcD, RegSrcD, ALUControlE,
-	output wire MemWriteM, PCSrcW, RegWriteW, MemtoRegW, ALUSrcE
+	output wire [1:0] ImmSrcD, RegSrcD, 
+	output wire [2:0] ALUControlE,
+	output wire MemWriteM, PCSrcW, RegWriteW, MemtoRegW, ALUSrcE, isMOVE
 );
-	wire PCSrcD, RegWriteD, MemtoRegD, MemWriteD, BranchD, ALUSrcD;
-	wire [1:0] ALUControlD, FlagWriteD;
+	wire PCSrcD, RegWriteD, MemtoRegD, MemWriteD, BranchD, ALUSrcD, isMOVD;
+	wire [1:0] FlagWriteD;
+	wire [2:0] ALUControlD;
 	wire [3:0] Flags;
 	
 	wire PCSrcE, RegWriteE, MemtoRegE, MemWriteE, BranchE, CondExE;
@@ -30,7 +32,8 @@ module controller (
 		.ALUSrcD(ALUSrcD),
 	    .FlagWriteD(FlagWriteD),
 		.ImmSrcD(ImmSrcD),
-		.RegSrcD(RegSrcD)	
+		.RegSrcD(RegSrcD),
+		.isMOVD(isMOVD)	
 	);
 	
 	reg2 registerc1(
@@ -45,6 +48,7 @@ module controller (
 		.ALUSrcD(ALUSrcD),
 	    .FlagWriteD(FlagWriteD),
 	    .CondD(InstrD[31:28]),
+	    .isMOVD(isMOVD),
 	    .Flags(Flags),
 	    .PCSrcE(PCSrcE),
 	    .RegWriteE(RegWriteE),
@@ -55,7 +59,8 @@ module controller (
 		.ALUSrcE(ALUSrcE),
 	    .FlagWriteE(FlagWriteE),
 	    .CondE(CondE),
-	    .FlagsE(FlagsE)
+	    .FlagsE(FlagsE),
+	    .isMOVE(isMOVE)
 	);
 	
 	condunit cu(

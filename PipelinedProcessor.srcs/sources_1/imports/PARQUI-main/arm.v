@@ -6,8 +6,9 @@ module arm (
 );
 	wire [31:0] InstrD; //
 	wire [3:0] ALUFlags; //
-	wire RegWriteW, ALUSrcE, MemtoRegW, PCSrcW; //
-	wire [1:0] RegSrcD, ImmSrcD, ALUControlE; //
+	wire RegWriteW, ALUSrcE, MemtoRegW, PCSrcW, isMOVE; //
+	wire [1:0] RegSrcD, ImmSrcD; //
+	wire [2:0] ALUControlE;//
 	
 	reg1 registerarm1(
 	    .clk(clk),
@@ -28,7 +29,8 @@ module arm (
 		.RegWriteW(RegWriteW),
 		.MemtoRegW(MemtoRegW),
 		.ALUSrcE(ALUSrcE),
-		.ALUControlE(ALUControlE)
+		.ALUControlE(ALUControlE),
+		.isMOVE(isMOVE)
 	);
 	
 	datapath dp(
@@ -37,6 +39,7 @@ module arm (
 		.InstrD(InstrD),
 		.RegSrcD(RegSrcD),
 		.ImmSrcD(ImmSrcD),
+		.isMOVE(isMOVE),
 		.ALUControlE(ALUControlE),
 		.ALUSrcE(ALUSrcE),
 		.PCSrcW(PCSrcW),
