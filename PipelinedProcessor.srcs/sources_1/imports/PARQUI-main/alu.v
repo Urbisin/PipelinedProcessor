@@ -16,12 +16,10 @@ module alu(
 
     always @(*) begin
         casex (ALUControl[2:0])
-            3'b000: Result = sum;               // ADD
+            3'b000: Result = isMOVE ? b : sum;               // ADD
             3'b001: Result = sum;               // SUB
             3'b010: Result = a & b;            // AND
             3'b011: Result = a | b;            // ORR
-            3'b100: Result = a * b;            // MUL
-            3'b101: Result = (b != 0) ? (a / b) : 32'b0; // UDIV, manejo de división por cero
             default: Result = 32'bx;           // Indefinido
         endcase
     end    
